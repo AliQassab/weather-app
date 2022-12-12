@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Spectral", serif;
+}
+.container {
+  width: 35%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  margin: 20px auto;
+  border-radius: 8px;
+  overflow: scroll;
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
+  background-color: #8bf7f7;
+}
+.content {
+  /* height: 100%; */
+  margin-top: 2rem;
+  /* overflow: hidden; */
+  width: 100%;
+}
+#form {
+  margin: 1rem auto;
+  width: 95%;
+  border-radius: 10rem;
+  display: flex;
+  align-items: center;
+}
+.search-bar-container {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+
+}
+
+input {
+  border: none;
+  outline: none;
+}
+.weather-description {
+  text-align: center;
+  margin: 1rem 0;
+}
+.country-name {
+  text-align: center;
+}
+.icon-img {
+  width: 75px;
+  background-color: #86effb;
+  
+  border-radius: 50%;
+  box-shadow:0px 0px 3px 4px rgba(179, 228, 244, 0.15); 
+
+
+}
+.temp {
+  margin-top: 1rem;
+  font-size: 32px;
+  position: relative;
+}
+.temp-i {
+  font-size: 15px;
+  font-weight: 300;
+  position: absolute;
+  top: 5px;
+}
+
+.weather-info span {
+  display: block;
+}
+.time {
+  font-size: 20px;
+  font-weight: 300;
+  color: #7075C9;
+}
+.weather-info {
+  margin: 3rem auto;
+  display: table;
+  color: #7075C9;
+}
+.des {
+  margin-bottom: 1rem;
+  color: #4c4f52;
+  font-size: 20px;
+  font-weight: 300;
+}
+.low {
+  margin-left: 5px;
+}
+.fa-solid {
+  cursor: pointer;
+}
+@media (max-width: 660px) {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: none;
+    border-radius: 0px;
+  }
+}
+
+.weather-container {
+  position: relative;
+
+  z-index: 1;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.spinner svg {
+  height: 6rem;
+  width: 6rem;
+  fill: rgb(158, 153, 153);
+  /* -webkit-animation: rotate 2s infinite linear; */
+  animation: rotate 2s infinite linear;
+}
+
+/* @-webkit-keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} */
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
