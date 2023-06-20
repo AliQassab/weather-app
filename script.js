@@ -8,6 +8,7 @@ const error = document.querySelector(".error ");
 
 const getLocation = function () {
   if (!navigator.geolocation) {
+
     return Promise.reject(new Error("Geolocation is not supported"));
   }
 
@@ -19,6 +20,8 @@ const getLocation = function () {
         )
       )
     );
+      spinner.style.display = "none";
+
   });
 };
 
@@ -116,7 +119,6 @@ const weatherCal = async function () {
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=02a70087b5928bc761bb5fcb427e25d9&units=metric`
     );
     const data = await res.json();
-    console.log("🚀 ~ file: script.js:116 ~ weatherCal ~ data:", data)
 
     if (data) {
       spinner.style.display = "none";
