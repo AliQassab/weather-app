@@ -8,7 +8,6 @@ const error = document.querySelector(".error ");
 
 const getLocation = function () {
   if (!navigator.geolocation) {
-    spinner.style.display = "none";
     return Promise.reject(new Error("Geolocation is not supported"));
   }
 
@@ -96,6 +95,8 @@ const searchForCity = async function (city) {
     const data = await res.json();
 
     if (data.cod === "404") {
+      spinner.style.display = "none";
+
       throw new Error(`City not found`);
     } else {
       spinner.style.display = "none";
@@ -103,6 +104,7 @@ const searchForCity = async function (city) {
     }
   } catch (err) {
     renderError(` ${err} `);
+    
   }
 };
 const weatherCal = async function () {
