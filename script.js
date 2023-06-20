@@ -8,6 +8,7 @@ const error = document.querySelector(".error ");
 
 const getLocation = function () {
   if (!navigator.geolocation) {
+    spinner.style.display = "none";
     return Promise.reject(new Error("Geolocation is not supported"));
   }
 
