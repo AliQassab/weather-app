@@ -1,3 +1,6 @@
+
+
+
 const searchCity = document.querySelector(".search-bar");
 const form = document.querySelector("#form");
 const weatherContainer = document.querySelector(".weather-container");
