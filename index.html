@@ -8,20 +8,22 @@
       http-equiv="Content-Security-Policy"
       content="upgrade-insecure-requests"
     />
-    <link
+   <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
 
   
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/query.css" />
+
     <title>Weather Now</title>
   </head>
   <body>
     <div class="container">
-      <h1>WeatherNow</h1>
+      <h1 class="title">WeatherNow</h1>
       <form id="form">
         <div class="search-bar-container">
           <input class="search-bar" type="text" placeholder="Search for City" />
@@ -30,9 +32,10 @@
       <div class="content">
         <div class="weather-container">
           <div class="spinner">
-            <svg>
-              <use href="img/icons.svg#icon-loader"></use>
-            </svg>
+             <svg>
+              <use href="./img/icons.svg#icon-loader"></use>
+
+            </svg> 
           </div>
         </div>
         <p class="error"></p>

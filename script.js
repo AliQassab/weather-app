@@ -1,17 +1,12 @@
-
-
-
 const searchCity = document.querySelector(".search-bar");
 const form = document.querySelector("#form");
 const weatherContainer = document.querySelector(".weather-container");
 const spinner = document.querySelector(".spinner");
 const error = document.querySelector(".error ");
 
-
-
+// get current location
 const getLocation = function () {
   if (!navigator.geolocation) {
-
     return Promise.reject(new Error("Geolocation is not supported"));
   }
 
@@ -23,11 +18,11 @@ const getLocation = function () {
         )
       )
     );
-      spinner.style.display = "none";
-
+    spinner.style.display = "block";
   });
 };
 
+// convert the country code to a flag
 function convertToFlag(countryCode) {
   const codePoints = countryCode
     .toUpperCase()
@@ -47,7 +42,6 @@ const renderCity = function (data) {
     minute: "numeric",
   });
 
-
   const { country } = data.sys;
   const city = data.name;
   const { speed } = data.wind;
@@ -59,7 +53,9 @@ const renderCity = function (data) {
      <div class="weather-details">
       <div class="country-name">
           
-          <h2 class="country"> ${city}, ${country} ${convertToFlag(country)}</h2>
+          <h2 class="country"> ${city}, ${country} ${convertToFlag(
+    country
+  )}</h2>
           <h2 class="time">${day} ${time}</h2>
 
           </div>
@@ -90,7 +86,6 @@ const renderCity = function (data) {
 
 const renderError = function (msg) {
   error.textContent = `⛔️${msg}⛔️`;
- 
 };
 
 const searchForCity = async function (city) {
@@ -110,9 +105,9 @@ const searchForCity = async function (city) {
     }
   } catch (err) {
     renderError(` ${err} `);
-    
   }
 };
+// get the current weather to your location 
 const weatherCal = async function () {
   try {
     const pos = await getLocation();
@@ -139,7 +134,7 @@ const weatherCal = async function () {
 };
 
 weatherCal();
-
+// search for a city's weather
 const displayCity = function (e) {
   e.preventDefault();
   const search = searchCity.value;
