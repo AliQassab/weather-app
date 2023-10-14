@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 2rem;
+  height: 100vh;
+  color: #222;
+  background-color: #eabfb9;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 112rem;
+  
+  gap: 4rem;
+  border: 2px solid #222;
+  outline: 2px solid #222;
+  outline-offset: 1.2rem;
+}
+.title {
+  font-family: "Lobster Two", cursive;
+  font-size: 5rem;
+  font-weight: 400;
+}
+.content {
+  margin-top: 2rem;
+  width: 100%;
+}
+input {
+  font-family: inherit;
+  color: inherit;
+  font-size: 2rem;
+  background-color: #f0d2ce;
+  padding: 1.6rem 3.2rem;
+  border: none;
+  width: 32rem;
+}
+input:focus {
+  outline: 2px solid #222;
+}
+
+.weather-description {
+  text-align: center;
+  margin: 2rem 0;
+}
+.country-name {
+  text-align: center;
+}
+
+.icon-img {
+  width: 75px;
+  background-color: #86effb;
+
+  border-radius: 50%;
+}
+.temp {
+  margin: 1rem 0;
+  font-size: 32px;
+  position: relative;
+}
+.temp-i {
+  font-size: 15px;
+  font-weight: 300;
+  position: absolute;
+  top: 5px;
+}
+
+.weather-info span {
+  display: block;
+}
+.time {
+  margin-top: 1rem;
+  font-size: 20px;
+  font-weight: 300;
+  color: #61649d;
+}
+.weather-info {
+  margin: 3rem auto;
+  display: table;
+  color: #7075c9;
+}
+.des {
+  margin-bottom: 1rem;
+  color: #4c4f52;
+  font-size: 20px;
+  font-weight: 300;
+}
+.low {
+  margin-left: 5px;
+}
+.fa-solid {
+  cursor: pointer;
+}
+@media (max-width: 660px) {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: none;
+    border-radius: 0px;
+  }
+}
+
+.weather-container {
+  position: relative;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.spinner svg {
+  height: 6rem;
+  width: 6rem;
+  fill: rgb(158, 153, 153);
+  animation: rotate 2s infinite linear;
+}
+.error {
+  text-align: center;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
